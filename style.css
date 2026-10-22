@@ -1,0 +1,57 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #1c1f24;
+  --muted: #5f6670;
+  --tfl-red: #dc241f;
+  --border: #dde1e6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a;
+    --card: #1f2226;
+    --text: #eceef1;
+    --muted: #9aa1ab;
+    --border: #33373d;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header { background: var(--tfl-red); color: #fff; padding: 16px; }
+header h1 { margin: 0; font-size: 1.4rem; }
+.subtitle { margin: 4px 0 0; opacity: 0.9; }
+main { max-width: 640px; margin: 0 auto; padding: 16px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.actions { margin: 12px 0; }
+label { font-weight: 600; display: block; margin-bottom: 6px; }
+input { flex: 1; min-width: 0; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); }
+button { padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); color: var(--text); font-size: 1rem; cursor: pointer; }
+button.primary { background: var(--tfl-red); border-color: var(--tfl-red); color: #fff; }
+.hint, #status { color: var(--muted); font-size: 0.9rem; }
+
+.stop h2 { margin: 0; font-size: 1.1rem; }
+.stop .meta { color: var(--muted); font-size: 0.85rem; margin: 2px 0 10px; }
+.stop-letter {
+  display: inline-block; min-width: 1.6em; text-align: center;
+  background: var(--tfl-red); color: #fff; border-radius: 50%;
+  padding: 2px 6px; margin-right: 6px; font-size: 0.85rem;
+}
+.arrivals { list-style: none; margin: 0; padding: 0; }
+.arrivals li { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-top: 1px solid var(--border); }
+.route { font-weight: 700; background: var(--text); color: var(--card); border-radius: 4px; padding: 2px 8px; min-width: 3em; text-align: center; }
+.dest { flex: 1; }
+.due { font-weight: 600; white-space: nowrap; }

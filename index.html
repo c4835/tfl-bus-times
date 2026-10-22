@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nearby Bus Times</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Nearby Bus Times</h1>
+    <p class="subtitle">Live TfL arrivals at the bus stops closest to you</p>
+  </header>
+
+  <main>
+    <!-- Step 1: the user's TfL app key. It is saved only in this browser (localStorage). -->
+    <section id="key-section" class="card">
+      <label for="api-key">TfL app key</label>
+      <div class="row">
+        <input id="api-key" type="password" placeholder="Paste your app key" autocomplete="off">
+        <button id="save-key" type="button">Save</button>
+      </div>
+      <p class="hint">Get a free key at <a href="https://api-portal.tfl.gov.uk" target="_blank" rel="noopener">api-portal.tfl.gov.uk</a>. It stays in your browser and is never uploaded anywhere else.</p>
+    </section>
+
+    <!-- Steps 2 to 4: find the user, find stops, show arrivals. -->
+    <div class="row actions">
+      <button id="find-me" type="button" class="primary">Find buses near me</button>
+      <button id="demo" type="button">Try Trafalgar Square</button>
+    </div>
+
+    <p id="status" role="status"></p>
+    <div id="stops"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
